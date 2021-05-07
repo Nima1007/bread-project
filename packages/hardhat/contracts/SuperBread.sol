@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: agpl-3.0
-pragma solidity >=0.6.0 <0.9.0;
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.7.0;
 
 import {
     ISuperfluid,
     ISuperToken,
+    ISuperApp,
     ISuperAgreement,
     SuperAppDefinitions
 } from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
@@ -47,7 +47,6 @@ contract SuperBread {
             SuperAppDefinitions.BEFORE_AGREEMENT_UPDATED_NOOP |
             SuperAppDefinitions.BEFORE_AGREEMENT_TERMINATED_NOOP;
 
-	// 
         _host.registerApp(configWord);
     }
 
@@ -175,7 +174,7 @@ contract SuperBread {
         bytes calldata ,// _cbdata,
         bytes calldata _ctx
     )
-        external override
+        external
         onlyExpected(_superToken, _agreementClass)
         onlyHost
         returns (bytes memory newCtx)
@@ -191,7 +190,7 @@ contract SuperBread {
         bytes calldata ,//_cbdata,
         bytes calldata _ctx
     )
-        external override
+        external
         onlyExpected(_superToken, _agreementClass)
         onlyHost
         returns (bytes memory newCtx)
@@ -207,7 +206,7 @@ contract SuperBread {
         bytes calldata ,//_cbdata,
         bytes calldata _ctx
     )
-        external override
+        external
         onlyHost
         returns (bytes memory newCtx)
     {

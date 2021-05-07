@@ -1,9 +1,9 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.6.0 <0.9.0;
+pragma solidity ^0.7.0;
 
 import {
-    RedirectAll, ISuperToken, IConstantFlowAgreementV1, ISuperfluid
-    } from "./SuperBread.sol";
+    SuperBread, ISuperToken, IConstantFlowAgreementV1, ISuperfluid
+} from "./SuperBread.sol";
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 */
 
 
-contract TradeableCashflow is ERC721, RedirectAll {
+contract TradeableCashflow is ERC721, SuperBread {
 
   constructor (
     address owner,
@@ -25,7 +25,7 @@ contract TradeableCashflow is ERC721, RedirectAll {
     ISuperToken acceptedToken
   )
     ERC721 ( _name, _symbol )
-    RedirectAll (
+    SuperBread (
       host,
       cfa,
       acceptedToken,
