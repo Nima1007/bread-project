@@ -16,6 +16,7 @@
     "@openzeppelin/contracts": "^3.2.0",
     "@superfluid-finance/ethereum-contracts": "^1.0.0-rc.3",
     "@tenderly/hardhat-tenderly": "^1.0.7",
+    "add": "^2.0.6",
     "chai": "^4.2.0",
     "chalk": "^4.1.0",
     "ethereum-waffle": "^3.1.1",
@@ -23,7 +24,8 @@
     "hardhat": "^2.0.6",
     "node-watch": "^0.7.0",
     "qrcode-terminal": "^0.12.0",
-    "ramda": "^0.27.1"
+    "ramda": "^0.27.1",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "chain": "hardhat node",
